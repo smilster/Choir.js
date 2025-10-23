@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self'; connect-src 'self'"> -->
+
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+    <!--    <link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <!--    <script src="js/external/bootstrap.bundle.min.5.3.0.js"></script>-->
+    <script src="js/external/vexflow.4.2.2.js"></script>
+    <!-- <script src="js/external/tonal.min.6.4.1.js"></script> -->
+    <script src="js/external/Tone.js"></script>
+
+    <link href="css/styles.css" rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choirJS</title>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
+
+</head>
+
+<!--
+#########################################
+#########################################
+#########################################
+#########################################
+-->
+
+<!-- functions and constants -->
+<script src="js/tools.js"></script>
+<script src="js/debugTree.js"></script>
+
+<!--handles tooltips and displays tutorial-->
+<script src="js/Help.js"></script>
+<script src="js/Tutorial.js"></script>
+<!--generic music helper functions-->
+<script src="js/Music.js"></script>
+
+<script src="samples/Instruments.js"></script>
+
+<!-- classes -->
+<!-- main class -->
+<script src="js/Choir.js"></script>
+
+<!-- class to store relevant properties for each voice -->
+<script src="js/Voice.js"></script>
+
+<!-- note parser generates vexflow stave notes and playNotes and schedules for toneJS -->
+<script src="js/NoteParser.js"></script>
+<script src="js/NoteGenerator.js"></script>
+
+
+
+
+<!-- upper pannel, vexflow context, transport button, key-selector and add-voice button -->
+<script src="js/NoteSheet.js"></script>
+<script src="js/Transport.js"></script>
+<script src="js/KeySelector.js"></script>
+<!-- audioPlayer loads samples and controls transport -->
+<script src="js/AudioBuffer.js"></script>
+
+<!-- voice control panel containing tabs, and manages adding and removing voices  -->
+<script src="js/VoiceControl.js"></script>
+<script src="js/Name.js"></script>
+
+
+<!-- control tab class for voice control panel on r.h.s with scale selector, voice range, klaviatur for showing scale and picking voice range, rhythm selector and buttons for clearing or generating notes  -->
+<script src="js/VoiceControlTab.js"></script>
+<script src="js/ScaleSelector.js"></script>
+<script src="js/RangeSelector.js"></script>
+<script src="js/Transpose.js"></script>
+<script src="js/RhythmSelector.js"></script>
+
+<!-- mixer to control playback and pick instrument -->
+<script src="js/Mixer.js"></script>
+<script src="js/Channel.js"></script>
+<script src="js/InstrumentSelector.js"></script>
+<!-- controls inter-voice intervals and shows input interval matrix for manipulation -->
+<script src="js/Interval.js"></script>
+
+
+
+
+<body>
+
+<div class="w-100">
+    <div class="mx-auto" id="choirContainer">
+    </div>
+</div>
+
+<!--<div class="text-black bg-light" id="debug-output" href="#debug"-->
+<!--     style="border: 1px solid #ccc; padding: 10px; min-height: 100px;">-->
+<!--    &lt;!&ndash; Tree content will be inserted here &ndash;&gt;-->
+<!--</div>-->
+
+</body>
+
+
+<script>
+
+    Choir.initialize("choirContainer");
+
+    // const container = document.getElementById('debug-output');
+    // DEPTH = 2;
+    // Tone.Transport.start();
+    //
+
+
+
+
+
+
+</script>
+
+</html>
