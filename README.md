@@ -31,7 +31,8 @@ I recommend to start with the **tutorial** provided in the bottom-left corner of
 
 
 #### 2. Add more voices
-- Refine inter-voice relations, change instruments, adjust volume and panning, change playback speed, experiment with scales, and explore how all of this impacts the perception of harmony and musical expression. 
+- Refine inter-voice relations, change instruments, adjust volume and panning, change playback speed, experiment with scales.
+- Explore how all of this impacts the perception of harmony and musical expression. 
 
 
 ## Code Design
