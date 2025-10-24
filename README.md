@@ -10,23 +10,12 @@ Choir.js itself **does not understand** chord progression or harmony. Instead, a
 
 I suggest beginning with the **tutorial**. You will find the button in the bottom-left corner of the interface. Here's a little video that rushes through the tutorial, you need to **unmute the video manually**.
 
-<div align="center">
-<video src="https://github.com/user-attachments/assets/988e2564-ebec-4e84-9927-c72cf136b792" type="video/mp4" muted=""></video>
-</div>
 
 
 
 
-### Features
-- Manual note editing (text input with simple syntax)
-- Random rhythm generation
-- Automated voiced generation
-- Scale and key visualization
-- Voice range setting
-- Audio playback with different instruments
-- Multi-channel mixer (fade, pan, solo, mute)
-- Tooltips 
-- Tutorial 
+
+
 
 
 
@@ -41,6 +30,17 @@ I suggest beginning with the **tutorial**. You will find the button in the botto
 #### 2. Add more voices
 - Refine inter-voice relations, change instruments, adjust volume and panning, change playback speed, experiment with scales.
 - Explore how all of these impacts the perception of harmony and musical expression. 
+
+### Features
+- Manual note editing (text input with simple syntax)
+- Random rhythm generation
+- Automated voiced generation
+- Scale and key visualization
+- Voice range setting
+- Audio playback with different instruments
+- Multi-channel mixer (fade, pan, solo, mute)
+- Tooltips
+- Tutorial
 
 
 ### Code Design
