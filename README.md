@@ -8,7 +8,7 @@ Choir.js itself **does not understand** chord progression or harmony. Instead, a
 
 ### [Start Choir.js](https://smilster.github.io/Choir.js)
 
-I recommend to start with the **tutorial** provided in the bottom-left corner of the interface.
+I suggest beginning with the **tutorial** in the bottom-left corner of the interface.
 
 ### Features
 - Manual note editing (text input with simple syntax)
