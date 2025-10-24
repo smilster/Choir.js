@@ -37,7 +37,7 @@ I recommend to start with the **tutorial** provided in the bottom-left corner of
 ## Code Design
 Choir.js focuses on providing a simple graphical interface with audio feedback for automated note generation. At the current stage, the underlying routines unfortunately depend on the GUI modules. Nonetheless, many code segments are designed for reuse. For example, take a look at `NoteGenerator.js` if you are interested in the core algorithm behind note generation.
 
-Score visualizing uses [Score visualizing uses [VexFlow](https://www.vexflow.com/).
+Score visualizing uses [VexFlow](https://www.vexflow.com/).
 Audio playback employs [Tone.js](https://tonejs.github.io/).
 
 ## What Choir.js is not
