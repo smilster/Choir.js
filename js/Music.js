@@ -1,19 +1,37 @@
 class Music {
 
 
+    /**
+     * Provides array of MIDI values belonging to a given scaleType with respective root MIDI value
+     * spans twice the octaveCount, see {@link extendScale}
+     *
+     * @param {string} scaleType
+     * @param {integer} root  MIDI value
+     * @returns {integer[]}
+     */
+
     static getScale(scaleType, root) {
-        let scale = allScales[scaleTypeList.indexOf(scaleType)] || allScales[0]; // Default to major if scaleType is not found
+        let scale = allScales[scaleTypeList.indexOf(scaleType)] || allScales[scaleTypeList.indexOf("Major")]; // Default to major if scaleType is not found
         return Music.extendScale(scale, root, 3);
     }
 
+
+    /**
+     * extends the scale given as MIDI values for one octave and extends to a range +- octaveCount with respect to root
+     * @param {integer[]} scale MIDI values for scale within one octave, values should be within [0,11]
+     * @param {integer} root MIDI value
+     * @param {integer} octaveCount
+     * @returns {integer[]} extendedScale
+     */
+
     static extendScale(scale, root, octaveCount) {
-        let result = [];
+        let extendedScale = [];
         for(let i = -octaveCount; i < octaveCount; i++){
             for(let note of scale){
-                result.push(note + (i*12) + root);
+                extendedScale.push(note + (i*12) + root);
             }
         }
-        return result;
+        return extendedScale;
     }
 
 
@@ -50,34 +68,8 @@ class Music {
         }
     }
 
-    // static enharmonicDur(pitchClass) {
-    //     const pitchMap = {
-    //         // "H": "B",
-    //         // "Hb": "Bb",
-    //         // "h": "b", -> "D"
-    //         // "hb": "bb", -> "Db"
-    //
-    //         "a#": "bb",
-    //         "a": "C",
-    //         "e": "G",
-    //         "b": "D",
-    //         "f#": "A",
-    //         "c#": "E",
-    //         "g#": "B",
-    //         "d#": "F#",
-    //         "d": "F",
-    //         "g": "Bb",
-    //         "c": "Eb",
-    //         "f": "Ab",
-    //         "bb": "Db",
-    //         "eb": "Gb"
-    //     };
-    //
-    //     return pitchMap[pitchClass] || pitchClass;
-    // }
 
     static enharmonicDur(pitchClass) {
-
 
 
         if (pitchClass == "H") {
@@ -181,7 +173,7 @@ scaleTypeList.push("Major Harmonic");
 allScales.push([0, 2, 4, 5, 7, 8, 11 ]);
 
 scaleTypeList.push("Major Pentatonic");
-allScales.push([0,2,4,7,9]);
+allScales.push([0, 2, 4, 7, 9]);
 
 
 scaleTypeList.push("Major Triad");
@@ -238,7 +230,7 @@ allScales.push([0, 2, 4, 5, 8, 9, 11]);
 // allScales.push([0, 1, 4, 5, 7, 8, 10 ]);
 
 scaleTypeList.push("Double Harmonic");
-allScales.push([0,1,4,5,7, 8, 11])
+allScales.push([0, 1, 4, 5, 7, 8, 11])
 
 scaleTypeList.push("Hungarian Minor");
 allScales.push([0, 2, 3, 6, 7, 8, 11 ]);

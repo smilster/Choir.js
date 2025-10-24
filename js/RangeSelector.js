@@ -6,24 +6,24 @@ class RangeSelector {
 
         this.startOktave = 2;
         this.endOktave = 5;
-        this.notenNamen = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+        this.keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
 
         this.isMouseDown = false;
         this.startNote = null;
 
 
-        this.ausgewaehlteNoten = [];
+        this.selectedNotes = [];
         this.scale = Array.from({length: 128}, (_, i) => i + 1);
 
         for (let i = 0; i < this.scale.length; i++) {
             let key = Tone.Frequency(this.scale[i], 'midi').toNote();
             if (key.split('').pop() < 6 && key.split('').pop() > 1) {
-                this.ausgewaehlteNoten.push(key);
+                this.selectedNotes.push(key);
             }
         }
 
-        this.voiceRangeButton;
-        this.claviature;
+        this.voiceRangeButton = null;
+        this.claviature = null;
         this.voiceRangePanel = this.createVoiceRangePanel();
         this.panel = this.createPanel();
 
@@ -63,17 +63,17 @@ class RangeSelector {
         const claviature = document.createElement('div');
         claviature.id = 'klaviatur' + this.id;
         claviature.classList.add('klaviatur');
-        for (let oktave = this.startOktave; oktave <= this.endOktave; oktave++) {
-            for (let i = 0; i < this.notenNamen.length; i++) {
-                const note = this.notenNamen[i];
-                const volleNote = note + oktave;
+        for (let octave = this.startOktave; octave <= this.endOktave; octave++) {
+            for (let i = 0; i < this.keys.length; i++) {
+                const key = this.keys[i];
+                const whiteKey = key + octave;
                 const taste = document.createElement('div');
                 taste.classList.add('taste');
-                taste.dataset.note = volleNote;
-                if (note.includes('#')) {
+                taste.dataset.note = whiteKey;
+                if (key.includes('#')) {
                     taste.classList.add('schwarz');
                 }
-                taste.innerHTML = volleNote === "C4" ? "<div class='C4-circle'></div>" : "";
+                taste.innerHTML = whiteKey === "C4" ? "<div class='C4-circle'></div>" : "";
 
                 claviature.appendChild(taste);
             }
@@ -89,7 +89,7 @@ class RangeSelector {
 
     selectNotes(note) {
         if (this.startNote) {
-            this.ausgewaehlteNoten = [];
+            this.selectedNotes = [];
             const keys = [...this.claviature.children];
             const startIndex = keys.findIndex(key => key.dataset.note === this.startNote);
             const endIndex = keys.findIndex(key => key.dataset.note === note);
@@ -97,7 +97,7 @@ class RangeSelector {
             const end = Math.max(startIndex, endIndex);
 
             for (let i = start; i <= end; i++) {
-                this.ausgewaehlteNoten.push(keys[i].dataset.note);
+                this.selectedNotes.push(keys[i].dataset.note);
             }
             this.updateClaviatureColors();
 
@@ -107,7 +107,7 @@ class RangeSelector {
     updateClaviatureColors() {
         const keys = [...this.claviature.children];
         keys.forEach(key => {
-            if (this.ausgewaehlteNoten.includes(key.dataset.note)) {
+            if (this.selectedNotes.includes(key.dataset.note)) {
                 key.classList.add('ausgewaehlt');
             } else {
                 key.classList.remove('ausgewaehlt');
@@ -121,8 +121,8 @@ class RangeSelector {
 
         });
 
-        this.notenStartEnd[0] = this.ausgewaehlteNoten[0];
-        this.notenStartEnd[1] = this.ausgewaehlteNoten[this.ausgewaehlteNoten.length - 1];
+        this.notenStartEnd[0] = this.selectedNotes[0];
+        this.notenStartEnd[1] = this.selectedNotes[this.selectedNotes.length - 1];
 
         this.voiceRangeLabel = this.notenStartEnd.join(' - ');
 

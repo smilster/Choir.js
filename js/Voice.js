@@ -132,7 +132,7 @@ class Voice {
         this.scaleSelector = null;
 
         this.voiceRangeMidi = [36, 83];
-        // this.noteCandidates;
+        this.noteCandidates =null;
 
         // // disjunction and voice coipling
         this.disjunction = 200;

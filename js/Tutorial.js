@@ -365,11 +365,11 @@ class Tutorial {
         klaviatur.claviature = this.voice.scaleSelector.klaviatur.claviature.cloneNode(true);
 
 
-        klaviatur.ausgewaehlteNoten = [];
+        klaviatur.selectedNotes = [];
         for (let i = 51; i < 64; i++) {
             let cNote = Tone.Frequency(klaviatur.scale[i], 'midi').toNote();
             if (cNote.split('').pop() < 6 && cNote.split('').pop() > 1) {
-                klaviatur.ausgewaehlteNoten.push(cNote);
+                klaviatur.selectedNotes.push(cNote);
 
             }
         }
