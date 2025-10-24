@@ -1,21 +1,49 @@
 # Choir.JS
 
+**Choir.js** is a **music composition assistant** designed for **inspiration** and **education**. The core feature is **automatic note generation**,  e.g., useful for adding a voice to a short musical passage. Choir.js visualizes the notes in simple musical scores and can play them back.
+
+Choir.js itself **does not understand** chord progression or harmony. Instead, a good melody already inherently encodes them to some extent, though not in a unique way. By defining scales and vertical interval-relations between voices (and the addition of randomness), Choir.js can produce countless harmonizing (or intentionally disharmonizing) accompaniments.
+
+**It's your job** to figure out how to tweak scales and intervals to create pleasing musical passages. You decide what sounds good. You are the composer, and Choir.js is only your inspiring little assistant implementing your rules.
+
 [Start Choir.js](https://smilster.github.io/Choir.js)
 
-## What is Choir.js
-**Choir.js** is a client-side JavaScript tool designed for **inspiration** and **education**. The core feature is the **automatic note generation**, e.g., useful for adding a voice to a small musical passage.
+I recommend to start with the **tutorial** provided in the bottom-left corner of the interface.
 
-Choir.js itself **does not understand** chord progression or harmony. Instead, a good melody already encodes chord progression to some extent, though not in a unique way. By defining scales and vertical interval-relations between voices (and the addition of randomness), Choir.js is capable of producing numerous harmonizing versions (or disharmonizing if you prefer). **It's your job** to figure out how to tweak scales and intervals such that you have a pleasing musical passage. You decide if it sounds good or not; **you are the composer**, and Choir.js is only your little inspiring assistant.
+## Features
+- Manual note editing (text input with simple syntax)
+- Random rhythm generation
+- Automated voiced generation
+- Scale and key visualization
+- Voice range setting
+- Audio playback with different instruments
+- Multi-channel mixer (fade, pan, solo, mute)
+- Tutorial 
 
-### You can begin in several ways
-- Define a musical scale/mode and generate a random melody.
+
+
+## Crating a Composition
+
+#### 1. You can begin in several ways
+- Define a musical scale or mode and generate a random melody.
 - Input your own melody.
 - Input the root notes of a chord progression.
 
-Finally: Add more voices, refine inter-voice relations, change instruments, adjust volume and panning, change playback speed, experiment with scales, and learn how all of this impacts the perception of harmony and musical expression. 
 
-Inspect the `NoteGenerator.js` if you are interested in the core algorithm for note generation.
+#### 2. Add more voices
+- Refine inter-voice relations, change instruments, adjust volume and panning, change playback speed, experiment with scales, and explore how all of this impacts the perception of harmony and musical expression. 
 
-## What it's not
-It's not a DAW. It's not a fancy live performance looping gadget. It's not a music notation software. It's not an AI black box for music generation. 
+
+## Code Design
+Choir.js focuses on providing a simple graphical interface with audio feedback for automated note generation. At the current stage, the underlying routines unfortunately depend on the GUI modules. Nonetheless, many code segments are designed for reuse. For example, take a look at `NoteGenerator.js` if you are interested in the core algorithm behind note generation.
+
+Score visualizing uses [Score visualizing uses [VexFlow](https://www.vexflow.com/).
+Audio playback employs [Tone.js](https://tonejs.github.io/).
+
+## What Choir.js is not
+- It's not a DAW.
+- It's not a fancy live performance looping gadget.
+- It's not a music notation software.
+- It's not an AI black box for music generation. 
+
 
