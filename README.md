@@ -10,6 +10,12 @@ Choir.js itself **does not understand** chord progression or harmony. Instead, a
 
 I suggest beginning with the **tutorial** in the bottom-left corner of the interface.
 
+
+
+https://github.com/user-attachments/assets/988e2564-ebec-4e84-9927-c72cf136b792
+
+
+
 ### Features
 - Manual note editing (text input with simple syntax)
 - Random rhythm generation
