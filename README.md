@@ -44,11 +44,11 @@ Audio playback employs [Tone.js](https://tonejs.github.io/).
 
 ### Run Locally
 
-If you want to run Choir.js locally, you must host a simple server, e.g.,
+If you want to run Choir.js locally, you must launch a simple server, e.g.,
 
 `python -m RangeHTTPServer` or `python -m SimpleHTTPServer`
 
-in the root folder, since samples must be hosted on same server. Samples are dynamically linked through `baseUrl = document.location;` in `samples/Instrument.js`, which should work for most testing cases. Alternatively, hard code the baseUrl path and directly open `index.html` with your browser without launching a server.
+in the root folder, since the browser usually restrict access to externally linked samples. This is achieved through through `baseUrl = document.location` in `samples/Instrument.js`, which should work for most testing cases. Alternatively, hard code the `baseUrl` path and directly open `index.html` with your browser without the need to launch a server.
 
 
 
