@@ -10,9 +10,12 @@ Choir.js itself **does not understand** chord progression or harmony. Instead, a
 
 I suggest beginning with the **tutorial** in the bottom-left corner of the interface.
 
+Here's a little video that rushes through the tutorial, you need to unmute the video manually.
 
+<div align="center">
+<video src="https://github.com/user-attachments/assets/988e2564-ebec-4e84-9927-c72cf136b792" type="video/mp4" muted=""></video>
+</div>
 
-https://github.com/user-attachments/assets/988e2564-ebec-4e84-9927-c72cf136b792
 
 
 
