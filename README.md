@@ -8,8 +8,9 @@ Choir.js itself **does not understand** chord progression or harmony. Instead, a
 
 ### [Start Choir.js](https://smilster.github.io/Choir.js)
 
-I suggest beginning with the **tutorial**. You will find the button in the bottom-left corner of the interface. Here's a little video that rushes through the tutorial, you need to **unmute the video manually**.
+I suggest beginning with the **tutorial**. You will find the button in the bottom-left corner of the interface. 
 
+### Tutorial Demo
 <div align="center">
  <a href="https://smilster.github.io/Choir.js/videos/tutorial.mp4">
     <img src="https://smilster.github.io/Choir.js/videos/tutorial_thumb.png" width="50%"></img>
