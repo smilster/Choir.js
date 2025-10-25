@@ -8,12 +8,21 @@ Choir.js itself **does not understand** chord progression or harmony. Instead, a
 
 ### [Start Choir.js](https://smilster.github.io/Choir.js)
 
-I suggest beginning with the **tutorial**. You will find the button in the bottom-left corner of the interface. 
+
 
 ### Tutorial Demo
+In the tutorial you will learn how to add setup up voice for note generation.
 <div align="center">
  <a href="https://smilster.github.io/Choir.js/videos/tutorial.mp4">
-    <img src="https://smilster.github.io/Choir.js/videos/tutorial_thumb.png" width="50%"></img>
+    <img src="https://smilster.github.io/Choir.js/videos/tutorial_thumb.png" width="350px"></img>
+ </a>
+</div>
+
+### Random Demo
+A random composition from scratch. Some rhythmic patterns were inserted manually. 
+<div align="center">
+ <a href="https://smilster.github.io/Choir.js/videos/random.mp4">
+    <img src="https://smilster.github.io/Choir.js/videos/random_thumb.png" width="350px"></img>
  </a>
 </div>
 
