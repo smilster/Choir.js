@@ -11,7 +11,7 @@ Choir.js itself **does not understand** chord progression or harmony. Instead, a
 
 
 ### Tutorial Demo
-In the tutorial you will learn how to setup up voice for note generation.
+Learn how to setup up a voice for note generation.
 <div align="center">
  <a href="https://smilster.github.io/Choir.js/videos/tutorial.mp4">
     <img alt="Tutorial Video" Demo src="https://smilster.github.io/Choir.js/videos/tutorial_thumb.png" width="350px"></img>
