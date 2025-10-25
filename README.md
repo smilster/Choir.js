@@ -14,7 +14,7 @@ Choir.js itself **does not understand** chord progression or harmony. Instead, a
 In the tutorial you will learn how to add setup up voice for note generation.
 <div align="center">
  <a href="https://smilster.github.io/Choir.js/videos/tutorial.mp4">
-    <img src="https://smilster.github.io/Choir.js/videos/tutorial_thumb.png" width="350px"></img>
+    <img alt="Tutorial Video" Demo src="https://smilster.github.io/Choir.js/videos/tutorial_thumb.png" width="350px"></img>
  </a>
 </div>
 
@@ -22,7 +22,15 @@ In the tutorial you will learn how to add setup up voice for note generation.
 A random composition from scratch. Some rhythmic patterns were inserted manually. 
 <div align="center">
  <a href="https://smilster.github.io/Choir.js/videos/random.mp4">
-    <img src="https://smilster.github.io/Choir.js/videos/random_thumb.png" width="350px"></img>
+    <img alt="Random Composition Demo Video" src="https://smilster.github.io/Choir.js/videos/random_thumb.png" width="350px"></img>
+ </a>
+</div>
+
+### Chord Progression Demo
+Example of how to compose a four-chord progression with random voices.
+<div align="center">
+ <a href="https://smilster.github.io/Choir.js/videos/chord-progression.mp4">
+    <img alt="Chord Progression Demo Video" src="https://smilster.github.io/Choir.js/videos/chord-progression_thumb.png" width="350px"></img>
  </a>
 </div>
 
