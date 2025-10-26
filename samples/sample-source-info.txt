@@ -1,4 +1,4 @@
-free samples downloaded from
+samples in external folder downloaded from
 
 https://github.com/nbrosowsky/tonejs-instruments
 

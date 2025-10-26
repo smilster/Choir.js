@@ -1,4 +1,12 @@
-DEPTH = 3;
+/**
+ * main class for Choir.js, modules are currently "legacy loaded" through <script> in HTML
+ *
+ * Choir sets creates basic layout and connects modules
+ * it controls addVoice and removeVoice
+ * it contains choir-specific properties 
+ */
+
+
 
 class Choir {
 

@@ -1,13 +1,3 @@
-/**
- * ```
- * cumulativ sum of one dimensional array
- * ```
- * @param array
- * @returns {*}
- */
-
-
-
 
 
 
