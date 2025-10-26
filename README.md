@@ -129,7 +129,7 @@ $$\large
 U_{ilk} = U_{ik}^{\small \text{self}} + U_{ilk}^{\small \text{coupling}}.
 $$
 
-The first term is the *self-coupling*, which adds an increasing penalty the larger the potential jump. This is achieved through a harmonic potential, reading 
+The first term is the *self-coupling*, which adds an increasing penalty the larger the interval jump. This is achieved through a harmonic potential, reading 
 
 $$\large
 U_{ik}^{\small \text{self}} = \kappa \left(\mathcal{N}_ {k-1} - \mathcal{C}_{il} \right)^2,
