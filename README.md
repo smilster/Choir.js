@@ -63,7 +63,7 @@ Example of how to compose a four-chord progression with random voices.
 Choir.js focuses on providing a simple graphical interface with audio feedback for automated note generation. At the current stage, the underlying routines unfortunately depend on the GUI modules. Nonetheless, many code segments are designed for reuse. For example, take a look at `NoteGenerator.js` if you are interested in the core algorithm behind note generation.
 
 Score visualizing uses [VexFlow 4.2.2](https://www.vexflow.com/).
-Audio playback employs [Tone.js](https://tonejs.github.io/).
+Audio playback employs [Tone.js 15.0.4](https://tonejs.github.io/).
 
 ### Run Locally
 
@@ -71,7 +71,7 @@ If you want to run Choir.js locally, you must launch a simple server, e.g.,
 
 `python -m RangeHTTPServer` or `python -m SimpleHTTPServer`
 
-in the root folder, since the browser usually restrict access to externally linked samples. This is achieved through `baseUrl = document.location` in `samples/Instrument.js`, which should work for most online hosted cases. Histed locally, you might have to change to `window.location.origin`, or hard code the `baseUrl` path and directly open `index.html` with your browser without the need to launch a server.
+in the root folder, since the browser usually restrict access to externally linked samples. This is achieved through `baseUrl = document.location` in `samples/Instrument.js`, which should work for most online hosted cases. For hosting locally, you might have to change to `window.location.origin`, or hard code the `baseUrl` path and directly open `index.html` with your browser without the need to launch a server.
 
 ### Sample References
 Samples stored in `samples/external` are taken from https://github.com/nbrosowsky/tonejs-instruments. A copy of the reference list is stored in `samples/sample-source-info.txt`. Samples stored in `samples/mine` were recorded by me. Feel free to use them without restrictions.
