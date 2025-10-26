@@ -77,6 +77,7 @@ in the root folder, since the browser usually restrict access to externally link
 Samples stored in `samples/external` are taken from https://github.com/nbrosowsky/tonejs-instruments. A copy of the reference list is stored in `samples/sample-source-info.txt`. Samples stored in `samples/mine` were recorded by me. Feel free to use them without restrictions.
 
 
+
 ### Theory - Note Generation
 
 The following algorithm is used to generate the notes (denoted as melody below) for a **voice** $i$.  For this method, all other voices $j \neq i$ are already defined. For simplicity, we neglect rest notes and allow only a single *preferred interval* per voice pair.
@@ -99,25 +100,24 @@ In general, the algorithm is a Markov chain, for which the pitch probabilities d
 | $l$ | Index of pitch candidate             |
 
 #### Melody
-A melody is a sequence of notes. Each note is defined by a **pitch** and duration. Let's assume all durations are already known (or chosen randomly), and only describe the generation of $\mathcal{N}_i$, the sequence of pitches for voice $i$. The pitch for each note $k$ is an integers $\mathcal{N}_{ik} \in \{0, \dots, 127\}$, corresponding to the MIDI key value. 
+A melody is a sequence of notes. Each note is defined by a **pitch** and duration. Let's assume all durations are already known (or chosen randomly), and only describe the generation of $\mathcal{N}_ i$, the sequence of pitches for voice $i$. The pitch for each note is an integer corresponding to a MIDI key value. 
 
 #### Pitch Candidates
 
-Pitch candidates, $\mathcal{C}_{il}$, are pitches (also encoded as MIDI values). They usually belong to a **scale or mode** within a given pitch/voice range, but may also be chosen arbitrarily. Only pitches belonging to $\mathcal{C}_i$ will be considered in the generation of the melody.
+Pitch candidates, $\mathcal{C}_{il}$, are pitches (also encoded as MIDI values). They usually belong to a **scale or mode** within a given pitch/voice range, but may also be chosen arbitrarily. Only pitches belonging to $\mathcal{C}_i$ will be considered in the generation.
 
-#### Interval Tensor
+#### Interval Matrix
 
-The **interval matrix** $\mathcal{I}_{ij}$ defines a vertical distance measured in semitones (one semitone $\hat= 1$) between voices $i$ and $j$. The distances can also be negative and the interval matrix is symmetric, i.e.,  $\mathcal{I}_{ij} = -\mathcal{I}_{ji}$.
-
-Note that, in general, $\mathcal{I}$ is a tensor with each element $\mathcal{ij}$ storing a vector of multiple distances. 
+The **Interval Matrix** $\mathcal{I}_ {ij}$ defines a vertical distance measured in semitones (one semitone $\hat= 1$) between voices $i$ and $j$. The distances can also be negative and the interval matrix is symmetric, i.e.,  $\mathcal{I}_ {ij} = -\mathcal{I}_ {ji}$. Note that, in general, $\mathcal{I}$ is a tensor with each element $\mathcal{I}_{ij}$ storing a vector of multiple distances. 
 
 #### Probability
 
-The probability $p_{ilk}$ to choose the pitch from $\mathcal{C}_{il}$ for $\mathcal{N}_{ik}$ is defined as
+The probability $p_{ilk}$ to choose the pitch from $\mathcal{C}_ {il}$ for $\mathcal{N}_{ik}$ is defined as
 
 $$\large
 p_{ilk} = \dfrac{ \exp\left(-\frac{U_{ilk}}{D}\right)}{\sum_l \exp\left(-\frac{U_{ilk}}{D}\right)}.
 $$
+
 with $U_{ilk}$, the potential of pitch candidate $l$ for note $k$ in voice $i$, and **disjunction** $D$.
 
 
@@ -130,19 +130,16 @@ U_{ilk} = U_{ik}^{\small \text{self}} + U_{ilk}^{\small \text{coupling}}.
 $$
 
 The first term is the *self-coupling*, which adds an increasing penalty the larger the potential jump. This is achieved through a harmonic potential, reading 
+
 $$\large
-U_{ik}^{\small \text{self}} = \kappa \left(\mathcal{N}_{k-1} - \mathcal{C}_{il} \right)^2,
+U_{ik}^{\small \text{self}} = \kappa \left(\mathcal{N}_ {k-1} - \mathcal{C}_{il} \right)^2,
 $$
-with jump penalty $\kappa \ge 0$.
 
-The second term defines the coupling to other voices $j\neq i$, which adds a reward, if the interval $(\mathcal{N}_j(t_k) - \mathcal{C}_{il})$ equals $\mathcal{I_{ij}}$. It reads
+with jump penalty $\kappa \ge 0$. The second term defines the coupling to other voices $j\neq i$, which adds a reward, if the interval $\mathcal{N}_ j(t_k) - \mathcal{C}_ {il}$ equals $\mathcal{I_{ij}}$. It reads
 
 $$\large
-U_{ilk}^{\small \text{coupling}} = - K \sum_{j \ne i} \delta \left[\left(\mathcal{N}_{jk'}  - \mathcal{C}_{il}\right) -  \mathcal{I}_{ijl}\right],
+U_{ilk}^{\small \text{coupling}} = - K \sum_{j \ne i} \delta \left[\left(\mathcal{N}_ {jk'}  - \mathcal{C}_ {il}\right) -  \mathcal{I}_{ij}\right],
 $$
 
 where $K \ge 0$ is the **voice coupling** reward, and $k'$ the index of note currently played by voice $j$. Note that $k$ and $k'$ usually differ due to different rhythmic patterns of the voices.
-
-
-
 
